@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Download page {% endblock %}
+{% block body %}
+<nav>
+    <div class="nav-wrapper" style="background-color:#333;">
+        <div class="container nav-wrapper">
+            <a href="#!" class="brand-logo" style="color:#7FFF00; font-size:19.2px;">Download page</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href='/' class="active"><i class="fa fa-home" style="font-size:30px; color:#7FFF00;"></i></a></li>
+
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class=" container intro2">
+    <div class="pay" style="padding-bottom:100px;">
+        <div class="container content1" style="color:#7FFF00;">
+            <h5 style="font-size:35px;"><em>Fill in the details in the form below</em></h5>
+        </div>
+
+
+        <div class="container form" style="padding-top:50px;  padding-left:80px; background-color:#3331; box-shadow:5px 5px 5px #7FFF00 ; border-radius: 50px;">
+
+            <form  action="{% url 'addUser' %}" method="post">
+
+                {% csrf_token %}
+            <div class="row">
+                <div class="col s9">
+                    <label>Full name</label>
+                        {{form.full_name}}
+                    <label >password</label>
+                        {{form.password}}
+                    <label >Email Address</label>
+                        {{form.Email}}
+                    <label >phone number</label>
+                        {{form.phone_number}}
+                    <label >subject</label>
+                        {{form.name_of_subject}}
+                </div>
+
+
+
+            </div>
+            <div style="padding-bottom:30px;">
+                 <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:green; ">
+                    Sumbit
+                     <i class="fa fa-send" style="color:white;" ></i>
+                </button>
+            </div>
+
+
+
+            </form>
+
+        </div>
+
+    <div class="pdf-display">
+
+        {% if search1 == None %}
+        <h6></h6>
+
+
+        {% else %}
+        <h5>Scroll downwards </h5>
+        <p>{{search1 | title}}</p>
+        {% endif  %}
+
+        {% if search1 == 'biology' %}
+        <div>
+             <iframe src="https://drive.google.com/file/d/1YZoiSe1gX3BuyrWxOr8eJL5YlLIFCCzg/preview" width="240" height="180"></iframe>
+
+        </div>
+
+    </div>
+
+
+    {% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Display download page {% endblock %}
+{% block body %}
+<nav>
+    <div class="nav-wrapper" style="background-color:#333;">
+        <div class="container nav-wrapper">
+            <a href="#!" class="brand-logo" style="color:#7FFF00; font-size:19.2px;">Display download page</a>
+
+        </div>
+    </div>
+
+</nav>
+
+
+
+
+<form action="{% url 'download page' %}" method="post" class="container col s6">
+    {% csrf_token %}
+
+    <label><b style="color:black; font-size:18px;">subject </b></label>
+    <input name="search1" class="form-control" placeholder="subject " />
+
+
+
+    <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:green; ">
+        Sumbit
+         <i class="fa fa-send" style="color:white;" ></i>
+    </button>
+
+</form>
+
+
+{% if search1 == None %}
+<h1></h1>
+
+
+{% else %}
+<p>{{search1 | title}}</p>
+{% endif  %}
+
+{% if search1 == 'biology' %}
+<div>
+     <iframe src="https://drive.google.com/file/d/1YZoiSe1gX3BuyrWxOr8eJL5YlLIFCCzg/preview" width="240" height="180"></iframe>
+
+</div>
+
+{% endif %}
+
+
+{% endblock %}
