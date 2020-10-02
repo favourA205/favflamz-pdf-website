@@ -14,7 +14,6 @@
 
 
 
-
 <form action="{% url 'download page' %}" method="post" class="container col s6">
     {% csrf_token %}
 
@@ -30,22 +29,11 @@
 
 </form>
 
+<div class="container info">
+    <h5>Please scroll down when you are linked to the next page. Thank you!
 
-{% if search1 == None %}
-<h1></h1>
-
-
-{% else %}
-<p>{{search1 | title}}</p>
-{% endif  %}
-
-{% if search1 == 'biology' %}
-<div>
-     <iframe src="https://drive.google.com/file/d/1YZoiSe1gX3BuyrWxOr8eJL5YlLIFCCzg/preview" width="240" height="180"></iframe>
-
+</h5>
 </div>
-
-{% endif %}
 
 
 {% endblock %}

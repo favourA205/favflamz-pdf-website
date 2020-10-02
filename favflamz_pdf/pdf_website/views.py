@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from .forms import RegistrationForm
 from .models import RegistrationData
-
+import time
+import sys
 import requests
 from requests.compat import quote_plus
 from bs4 import BeautifulSoup
@@ -20,8 +21,7 @@ def download_page(request):
 
     context = {
         'form':RegistrationForm,
-        'search1':select1
-
+        'search1':select1,
 
 
     }
@@ -44,15 +44,35 @@ def addUser(request):
     return redirect('interjection page')
 
 def interjection_page(request):
+    state = "Verifying payment..."
+    print(state)
+
+    # animation = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
+    animation = ["[■□□□□□□□□□]", "[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]",
+                 "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+
+    for i in range(len(animation)):
+        time.sleep(5)
+        sys.stdout.write("\r" + animation[i % len(animation)])
+        sys.stdout.flush()
+
+    print("\n")
+
+
     select1 = request.POST.get('search1')
     print(select1)
 
+
     context = {
         'search1': select1,
+        'put':state,
+        'animate':animation
 
     }
 
     return render(request, 'interjection page.html',context)
+
+
 
 
 

@@ -48,6 +48,9 @@
                  <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:green; ">
                     Sumbit
                      <i class="fa fa-send" style="color:white;" ></i>
+                     <p>{{ put }}</p>
+                      <p>{{ animate }}</p>
+
                 </button>
             </div>
 
@@ -55,29 +58,86 @@
 
             </form>
 
+
         </div>
 
-    <div class="pdf-display">
+
+
+
+    <div class=" container pdf-display">
 
         {% if search1 == None %}
         <h6></h6>
 
 
         {% else %}
+        <i class="fa fa-send" style="color:white; font-size:20px;" ></i>
         <h5>Scroll downwards </h5>
-        <p>{{search1 | title}}</p>
+        <h2><p>{{search1 | title}}</p></h2>
         {% endif  %}
 
         {% if search1 == 'biology' %}
         <div>
-             <iframe src="https://drive.google.com/file/d/1YZoiSe1gX3BuyrWxOr8eJL5YlLIFCCzg/preview" width="240" height="180"></iframe>
-
+            <h5><a href="https://drive.google.com/file/d/1U_0fKKxzDBVxZ4eI6Bf9WS4mDvA7EBMC/view?usp=sharing">Click here to download Biology </a></h5>
         </div>
+
+        {% elif search1 == 'mathematics' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1z0bO7ionf9lmrpaGfJBLbyKbb_HbGdNm/view?usp=sharing"> Click here to download Mathematics</a></h5>
+        </div>
+
+        {% elif search1 == 'physics' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1e4YFWlQhK3GRdukPHdnADDIqM2p6ukwB/view?usp=sharing">Click here to download Physics</a></h5>
+        </div>
+
+        {% elif search1 == 'commerce' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1zHv36jTF2ZvGLTQgfU9Id9m8fSXg5-KO/view?usp=sharing">Click here to download Commmerce</a></h5>
+        </div>
+
+        {% elif search1 == 'english' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1qaTWLNiWGTSzN9yJ8QKQRfov2fBUuG1m/view?usp=sharing">Click here to download English</a></h5>
+        </div>
+
+        {% elif search1 == 'economics' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1KXkhZrqabSzznXbeiHsmLdYHf_wpUewm/view?usp=sharing">Click here to download Economics</a></h5>
+        </div>
+
+        {% elif search1 == 'government' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1NUycXC8NCayr5F2ucEOWNxT29UT3Elog/view?usp=sharing">Click here to download Government</a></h5>
+        </div>
+
+
+        {% elif search1 == 'crk' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1II-YWATLfvirEmr3t5v0_1og0MvAWemR/view?usp=sharing" >Click here to download CRK</a></h5>
+        </div>
+
+        {% elif search1 == 'literature' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1yekdQg7ipRYXaJ9qxO_RiyuhJeV8pmRL/view?usp=sharing">Click here to download literature</a></h5>
+        </div>
+
+        {% elif search1 == 'chemistry' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1x66QikJHq9W_sX9nXW_8o97aDflcEYBk/view?usp=sharing">Click here to download Chemistry</a></h5>
+        </div>
+
+
 
     </div>
 
 
     {% endif %}
+        <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:green; ">
+            <a href="/"> Done ,thanks for visting! </a>
+             <i class="fa fa-send" style="color:white;" ></i>
+        </button>
+
 
 
 
