@@ -48,15 +48,13 @@
                  <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:green; ">
                     Sumbit
                      <i class="fa fa-send" style="color:white;" ></i>
-                     <p>{{ put }}</p>
-                      <p>{{ animate }}</p>
 
                 </button>
             </div>
 
 
-
             </form>
+            <em style="font-size:16px; ">Once you submit, please wait for verification of payment......</em>
 
 
         </div>
@@ -127,16 +125,26 @@
            <h5><a href="https://drive.google.com/file/d/1x66QikJHq9W_sX9nXW_8o97aDflcEYBk/view?usp=sharing">Click here to download Chemistry</a></h5>
         </div>
 
+        {% elif search1 == 'account' %}
+         <div>
+           <h5><a href="https://drive.google.com/file/d/1LWQkxTX6hJAW17NmhrkZVSLI2dz8i0e_/view?usp=sharing"> Click here to download Account</a></h5>
+        </div>
+
+
 
 
     </div>
 
 
     {% endif %}
-        <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:green; ">
-            <a href="/"> Done ,thanks for visting! </a>
-             <i class="fa fa-send" style="color:white;" ></i>
-        </button>
+        <div style="padding-left:150px; padding-top:50px; ">
+            <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:green;  color:white;">
+                <a href="/"> Done ,thanks for visting! </a>
+                 <i class="fa fa-send" style="color:white;" ></i>
+            </button>
+
+        </div>
+
 
 
 

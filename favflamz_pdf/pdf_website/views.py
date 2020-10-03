@@ -20,7 +20,7 @@ def download_page(request):
 
     context = {
         'form':RegistrationForm,
-        'search1':select1
+        'search1':select1,
 
 
 
@@ -44,13 +44,29 @@ def addUser(request):
     return redirect('interjection page')
 
 def interjection_page(request):
-    
+    import time
+    import sys
+    hey ="verifing payment:"
+    print(hey)
+
+    # animation = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
+    animation = ["[■□□□□□□□□□]", "[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]",
+                 "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+
+    for i in range(len(animation)):
+        time.sleep(60)
+        sys.stdout.write("\r" + animation[i % len(animation)])
+        sys.stdout.flush()
+
+    print("\n")
+
     select1 = request.POST.get('search1')
     print(select1)
 
 
     context = {
         'search1': select1,
+        'heyyo':hey
 
     }
 
